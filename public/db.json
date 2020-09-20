@@ -1,0 +1,23 @@
+[
+  {
+    "id": 0,
+    "title":  "Spider-man",
+    "company": "Insomniac Games",
+    "image": "https://i.citrus.ua/imgcache/size_800/uploads/shop/1/d/1db3803f03e6e64540bfb36632475f54.jpg",
+    "price": 25.99
+  },
+  {
+    "id": 1,
+    "title":  "Grand Theft Auto V",
+    "company": "Rockstar Games",
+    "image": "https://i.citrus.ua/uploads/shop/d/1/d1a3445d9b1af89b66280ea456d71fef.jpg",
+    "price": 17.88
+  },
+  {
+    "id": 2,
+    "title":  "Red Dead Redemption 2",
+    "company": "Rockstar Games",
+    "image": "https://i.citrus.ua/imgcache/size_800/uploads/shop/4/e/4e4dda755f2056f27c3eb6015c1d9ac8.jpg",
+    "price": 38.82
+  }
+]
