@@ -19,5 +19,68 @@
     "company": "Rockstar Games",
     "image": "https://i.citrus.ua/imgcache/size_800/uploads/shop/4/e/4e4dda755f2056f27c3eb6015c1d9ac8.jpg",
     "price": 38.82
+  },
+  {
+    "id": 3,
+    "title":  "The Last of Us: Part II",
+    "company": "Naughty Dog",
+    "image": "https://i.citrus.ua/uploads/shop/e/5/e5bfab9d460606743232ebe023512751.jpg",
+    "price": 59.88
+  },
+  {
+    "id": 4,
+    "title":  "God of War",
+    "company": "Santa Monica Studio",
+    "image": "https://i.citrus.ua/uploads/shop/d/8/d8e2b770af4958c7d6a8f891c1ceb708.jpg",
+    "price": 14.09
+  },
+  {
+    "id": 5,
+    "title":  "Death Stranding",
+    "company": "Kojima Productions",
+    "image": "https://i.citrus.ua/uploads/shop/3/a/3adc91ee84db707864e6373f9852e8a2.jpg",
+    "price": 29.99
+  },
+  {
+    "id": 6,
+    "title":  "Uncharted 4 a thief's end",
+    "company": "Naughty Dog",
+    "image": "https://i.citrus.ua/uploads/shop/c/9/c9454c67e9acc172c10856b1dfc08789.jpg",
+    "price": 19.76
+  },
+  {
+    "id": 7,
+    "title":  "Until Dawn",
+    "company": "Supermassive Games Ltd",
+    "image": "https://i.citrus.ua/uploads/shop/a/6/a659ec5823b54ea07f0e47703bbd1c37.jpg",
+    "price": 14.39
+  },
+  {
+    "id": 8,
+    "title":  "Detroit: Become Human",
+    "company": "Quantic Dream",
+    "image": "https://i.citrus.ua/uploads/shop/a/8/a8bd5987f3c0d020dff8a562456aad61.jpg",
+    "price": 15.94
+  },
+  {
+    "id": 9,
+    "title":  "Horizon Zero Dawn. Complete Edition",
+    "company": "Guerrilla",
+    "image": "https://i.citrus.ua/uploads/shop/e/5/e52b76c71ad343f15e454e1d3d93dd81.jpg",
+    "price": 12.75
+  },
+  {
+    "id": 10,
+    "title":  "Battlefield V",
+    "company": "DICE",
+    "image": "https://i.citrus.ua/uploads/shop/1/2/120cf36f8d85daa6ebc5dec3353e4783.jpg",
+    "price": 14.99
+  },
+  {
+    "id": 11,
+    "title":  "Metro Exodus",
+    "company": "4A Games",
+    "image": "https://i.citrus.ua/uploads/shop/9/8/981c8ac9048d16801d858259f0ddab39.jpg",
+    "price": 55.83
   }
 ]

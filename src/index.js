@@ -9,7 +9,7 @@ ReactDOM.render(
   <React.StrictMode>
       <Provider store={store}>
           <App />
-          { console.log(store.getState()) }
+          { console.log('game items from index, getState()', store.getState()) }
       </Provider>
   </React.StrictMode>,
   document.getElementById('root')

@@ -1,44 +1,58 @@
 import React from 'react';
 import {Card, Image, Icon, Button} from 'semantic-ui-react';
-import {useSelector, useDispatch} from 'react-redux';
+import {connect} from 'react-redux';
 import {addToShoppingCartAC} from '../../redux/reducers';
 
-const CardItem = (props) => {
+const CardItem = (game) => {
 
-    const dispatch = useDispatch();
-
-    const addToShoppingCart = React.useCallback((item) => {
-        dispatch(addToShoppingCartAC(item));
-        console.log('click');
-    }, []);
-
-    const addedCount = useSelector(state => state.cartItems.reduce(
-        (count, game) => count + (game.id === props.id ? 1 : 0), 0));
-
-    console.log(props);
+    const {addToShoppingCart, addedCount, image, title, company, price} = game;
 
     return (
-        <Card>
-            <Image src={props.image} wrapped ui={false} />
+        <Card style={{"margin-top": "25px"}}>
+            <Image src={image} wrapped ui={false} />
             <Card.Content>
-                <Card.Header>{props.title}</Card.Header>
+                <Card.Header>{title}</Card.Header>
                 <Card.Meta>
-                    <span className='date'>{props.company}</span>
+                    <span className='date'>{company}</span>
                 </Card.Meta>
             </Card.Content>
             <Card.Content extra>
                 <a>
                     <Icon name='dollar'/>
-                    {props.price}
+                    {price}
                 </a>
             </Card.Content>
             <Card.Content>
-                <Button onClick={addToShoppingCart.bind(this, props.id)}>
-                    ADD ({addedCount > 0 && `(${addedCount})`})
+                <Button onClick={addToShoppingCart.bind(this, game)}>
+                    ADD {addedCount > 0 && `(${addedCount})`}
                 </Button>
             </Card.Content>
         </Card>
     )
 };
 
-export default CardItem;
+/*const dispatch = useDispatch();
+const addToShoppingCart = React.useCallback((item) => {
+    dispatch(addToShoppingCartAC(item));
+}, []);
+const cartItems = useSelector(state => state.cartItems);
+const addedCount = (cartItems.reduce(
+    (count, game) => count + (game.id === props.id ? 1 : 0), 0));
+// const addedCount = useSelector(state => state.cartItems.length);*/
+
+
+const mapStateToProps = (state, {id}) => {
+    return {
+        addedCount: state.cartItems.reduce( (count, game) => count + (game.id === id ? 1 : 0), 0)
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addToShoppingCart: (obj) => {
+            dispatch(addToShoppingCartAC(obj))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardItem);

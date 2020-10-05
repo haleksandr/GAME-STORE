@@ -1,17 +1,9 @@
 import React from 'react';
 import {Menu, Input} from 'semantic-ui-react';
-import {useDispatch, useSelector} from "react-redux";
-import {setFilterAC} from "../../redux/reducers";
+import {connect} from "react-redux";
+import {setFilterAC, setQueryAC} from "../../redux/reducers";
 
-const Filter = (props) => {
-
-    const dispatch = useDispatch();
-    const filterBy = useSelector(state => state.filterBy);
-
-    const setFilter = React.useCallback((filter) => {
-        dispatch(setFilterAC(filter))
-    }, []);
-
+const Filter = ({filterBy, setFilter, searchQuery, setQuery}) => {
     return (
         <div>
             <Menu secondary>
@@ -34,14 +26,17 @@ const Filter = (props) => {
                     PRICE (LOW to HIGH)
                 </Menu.Item>
                 <Menu.Item
-                    active={filterBy === 'author'}
-                    onClick={setFilter.bind(this, 'author')}
+                    active={filterBy === 'company'}
+                    onClick={setFilter.bind(this, 'company')}
                 >
                     AUTHOR(A-Z)
                 </Menu.Item>
                 <Menu.Menu position='right'>
                     <Menu.Item>
-                        <Input icon='search' placeholder='Search...' />
+                        <Input icon='search'
+                               placeholder='Search'
+                               value={searchQuery}
+                               onChange={e => setQuery(e.target.value)} />
                     </Menu.Item>
                 </Menu.Menu>
             </Menu>
@@ -49,4 +44,22 @@ const Filter = (props) => {
     )
 };
 
-export default Filter;
+const mapStateToProps = (state) => {
+    return {
+        filterBy: state.filterBy,
+        searchQuery: state.searchQuery
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setFilter: (filter) => {
+            dispatch(setFilterAC(filter))
+        },
+        setQuery: (query) => {
+            dispatch(setQueryAC(query))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filter);
